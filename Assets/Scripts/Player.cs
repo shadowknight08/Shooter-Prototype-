@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         if (controller == null)
         {
             controller = GetComponent<CharacterController>();
-            Debug.Log("controller is added");
+            
         }
 
         offset = transform.position - Camera.main.transform.position;

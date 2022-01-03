@@ -17,12 +17,11 @@ public class Shotgun : Weapons
             RaycastHit hit = new RaycastHit();
             if (Physics.Raycast(transform.position + new Vector3(0, 0, 1), SpreadDirection(), out hit, base.range))
             {
-                Debug.Log("function called");
-                Debug.Log(hit.collider.name);
+                
                 GameObject impact = Instantiate(base.hitprefab, hit.point, Quaternion.LookRotation(hit.normal));
                 Destroy(impact, 2f);
             }
-            Debug.Log("shotgun bullet " + i);
+           
 
         }
 

@@ -8,10 +8,14 @@ public class MachineGun : Weapons
     {
         base.Shoot();
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, range))
+        if (Physics.Raycast(transform.position, transform.forward + new Vector3(0, -.1f, 0), out hit, range))
         {
-            Debug.Log("function called");
-            Debug.Log(hit.collider.name);
+            Enemy enemy = hit.transform.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.Damage(500);
+            }
+
             GameObject impact = Instantiate(hitprefab, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impact, 2f);
         }
