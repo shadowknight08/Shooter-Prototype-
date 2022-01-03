@@ -41,7 +41,7 @@ public abstract  class Weapons : MonoBehaviour
     
    public virtual IEnumerator Fire()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(.1f);
         canfire = true;
     }
 

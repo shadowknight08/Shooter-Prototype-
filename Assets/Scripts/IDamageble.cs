@@ -6,5 +6,5 @@ public interface IDamageble
 {
     int Heath { get; set; }
 
-    void Damage();
+    void Damage(int damage);
 }
